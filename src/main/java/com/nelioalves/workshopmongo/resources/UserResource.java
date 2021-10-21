@@ -1,7 +1,6 @@
 package com.nelioalves.workshopmongo.resources;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +29,10 @@ public class UserResource {
 		return ResponseEntity.ok().body(listDto);
 	}
 
-	//@RequestMapping(value="/{id}", method = RequestMethod.GET)
-
+	@RequestMapping(value="/{id}", method = RequestMethod.GET)
+	public ResponseEntity<UserDTO> findById(@PathVariable String id) {
+		User obj = service.findById(id);
+		return ResponseEntity.ok().body(new UserDTO(obj));
+		//return ResponseEntity.ok().body(new UserDTO(obj));
+	}
 }
