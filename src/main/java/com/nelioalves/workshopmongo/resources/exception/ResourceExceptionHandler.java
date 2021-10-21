@@ -1,6 +1,5 @@
 package com.nelioalves.workshopmongo.resources.exception;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
